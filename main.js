@@ -55,7 +55,7 @@ Thumbnail.prototype.ensureThumbnail = function ensureThumbnail(filename, width, 
   if (filename !== path.basename(filename)) { throw new Error('filename contains a path'); }
 
   var extension = path.extname(filename);
-  if (!~this._supportedExtensions.indexOf(extension.toLowerCase())) { throw new TypeError('image type not supported'); }
+  if (!~this._supportedExtensions.indexOf(extension.toLowerCase())) { throw new TypeError('image type not supported ' + extension); }
 
   var wxh = '';
   if (height) { wxh = 'x'+height; }
